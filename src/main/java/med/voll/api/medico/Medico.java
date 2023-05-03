@@ -20,6 +20,7 @@ public class Medico {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
+    private String telefone;
     private String email;
     private String crm;
 
@@ -31,6 +32,7 @@ public class Medico {
 
     public Medico(DadosMedicoRequisicao medicoRequisicao) {
         this.nome = medicoRequisicao.nome();
+        this.telefone = medicoRequisicao.telefone();
         this.email = medicoRequisicao.email();
         this.crm = medicoRequisicao.crm();
         this.especialidade = medicoRequisicao.especialidade();

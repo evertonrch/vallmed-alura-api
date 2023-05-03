@@ -13,6 +13,9 @@ public record DadosMedicoRequisicao(
         String nome,
 
         @NotBlank
+        String telefone,
+
+        @NotBlank
         @Email
         String email,
 
