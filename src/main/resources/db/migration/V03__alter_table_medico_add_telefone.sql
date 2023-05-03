@@ -1,0 +1,1 @@
+ALTER TABLE tb_medico ADD COLUMN telefone VARCHAR(70) NOT NULL;
