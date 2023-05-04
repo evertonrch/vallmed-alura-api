@@ -6,7 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import med.voll.api.endereco.Endereco;
-import med.voll.api.endereco.EnderecoRequisicao;
+import med.voll.api.medico.dto.DadosMedicoRequisicao;
+import med.voll.api.medico.dto.Especialidade;
 
 @NoArgsConstructor
 @Getter
