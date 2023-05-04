@@ -36,7 +36,7 @@ public class MedicoController {
     @GetMapping
     public ResponseEntity<Page<MedicoDataList>> listMedicos(@PageableDefault(size = 1, sort = {"nome"}, direction = Sort.Direction.DESC) Pageable pageable) {
         System.out.println(pageable);
-        Page<Medico> medicos = medicoRepository.findAll(pageable);
+        Page<Medico> medicos = medicoRepository.findAllByAtivoTrue(pageable);
         return ResponseEntity.ok(medicos.map(MedicoDataList::new));
     }
 
@@ -49,9 +49,12 @@ public class MedicoController {
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
+
     @DeleteMapping("/{id}")
+    @Transactional
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteMedico(@PathVariable Long id) {
-        medicoRepository.deleteById(id);
+        var medico = medicoRepository.getReferenceById(id);
+        medico.inativar();
     }
 }
