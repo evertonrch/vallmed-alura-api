@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import med.voll.api.endereco.Endereco;
+import med.voll.api.endereco.EnderecoRequisicao;
+import med.voll.api.medico.dto.DadosAtualizarMedico;
 import med.voll.api.medico.dto.DadosMedicoRequisicao;
 import med.voll.api.medico.dto.Especialidade;
 
@@ -39,4 +41,16 @@ public class Medico {
         this.especialidade = medicoRequisicao.especialidade();
         this.endereco = new Endereco(medicoRequisicao.endereco());
     }
+
+    public void atualizarInformacoes(DadosAtualizarMedico requisicao) {
+        if(requisicao.nome() != null)
+            this.nome = requisicao.nome();
+
+        if(requisicao.telefone() != null)
+            this.nome = requisicao.telefone();
+
+        if(requisicao.endereco() != null)
+            this.endereco.atualizarInformacoes(requisicao.endereco());
+    }
+
 }
