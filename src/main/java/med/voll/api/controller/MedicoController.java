@@ -48,4 +48,10 @@ public class MedicoController {
         medico.atualizarInformacoes(requisicao);
         return ResponseEntity.status(HttpStatus.OK).build();
     }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteMedico(@PathVariable Long id) {
+        medicoRepository.deleteById(id);
+    }
 }
