@@ -9,18 +9,18 @@ import med.voll.api.endereco.EnderecoRequisicao;
 
 public record DadosMedicoRequisicao(
 
-        @NotBlank(message = "Nome não deve ser nulo ou vazio")
+        @NotBlank(message = "{nome.obrigatorio}")
         String nome,
 
         @NotBlank
         String telefone,
 
-        @NotBlank(message = "Email não deve ser nulo ou vazio")
-        @Email
+        @NotBlank(message = "{email.obrigatorio}")
+        @Email(message = "{email.invalido}")
         String email,
 
-        @NotBlank(message = "CRM não deve ser nulo ou vazio")
-        @Pattern(regexp = "\\d{4,6}")
+        @NotBlank(message = "{crm.obrigatorio}")
+        @Pattern(regexp = "\\d{4,6}", message = "{crm.invalido}")
         String crm,
 
         @NotNull
