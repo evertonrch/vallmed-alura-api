@@ -25,6 +25,11 @@ spring:
     ansi:
       enabled: always
 
+  security:
+    user:
+      name: everton
+      password: 123
+
 server:
   error:
     include-stacktrace: never
