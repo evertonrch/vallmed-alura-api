@@ -1,15 +1,14 @@
-package med.voll.api.medico;
+package med.voll.api.domain.medico;
 
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import med.voll.api.endereco.Endereco;
-import med.voll.api.endereco.EnderecoRequisicao;
-import med.voll.api.medico.dto.DadosAtualizarMedico;
-import med.voll.api.medico.dto.DadosMedicoRequisicao;
-import med.voll.api.medico.dto.Especialidade;
+import med.voll.api.domain.medico.endereco.Endereco;
+import med.voll.api.dto.DadosAtualizarMedico;
+import med.voll.api.dto.DadosMedicoRequisicao;
+import med.voll.api.dto.Especialidade;
 
 @NoArgsConstructor
 @Getter
